@@ -13,6 +13,8 @@ phases:
       - docker build -t $IMAGE_NAME:$IMAGE_TAG1 .
       - echo Tagging the Docker image...
       - docker tag $IMAGE_NAME:$IMAGE_TAG1 $REPOSITORY_URI:$IMAGE_TAG2
+      - echo listing docker images
+      - docker images
       - echo Pushing the Docker image...
       - docker push $REPOSITORY_URI:$IMAGE_TAG2
   post_build:
