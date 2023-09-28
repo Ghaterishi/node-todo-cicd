@@ -16,7 +16,7 @@ phases:
       - echo listing docker images
       - docker images
       - echo Pushing the Docker image...
-      - docker push $REPOSITORY_URI:$IMAGE_TAG2
+      - docker image push --all-tags $REPOSITORY_URI
   post_build:
     commands:
       - echo Writing image definitions file...
