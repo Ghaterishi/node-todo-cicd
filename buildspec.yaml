@@ -14,7 +14,7 @@ phases:
       - echo Tagging the Docker image...
       - docker tag $IMAGE_NAME:$IMAGE_TAG1 $REPOSITORY_URI:$IMAGE_TAG2
       - echo Pushing the Docker image...
-      - docker push $REPOSITORY_URI:$IMAGE_TAG2 2>&1 | tee push.log # Capture output
+      - docker push $REPOSITORY_URI:$IMAGE_TAG2
   post_build:
     commands:
       - echo Writing image definitions file...
@@ -23,4 +23,3 @@ phases:
 artifacts:
   files:
     - imageDetail.json
-    - push.log # Include the captured log in the artifacts
